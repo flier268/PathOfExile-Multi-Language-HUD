@@ -33,8 +33,8 @@
 魔力消耗:<<---->>Mana Reserved:
 附加傷害效用:<<---->>Effectiveness of Added Damage:
 經驗值:<<---->>Experience:
-施放時間: ([\\d.+\\-%]+) 秒<<---->>Cast Time: ([\\d.+\\-%]+) sec
-持續 ([\\d.+\\-%]+) \\(augmented\\) 秒<<---->>Lasts ([\\d.+\\-%]+) \\(augmented\\) Seconds            
-持續 ([\\d.+\\-%]+) 秒<<---->>Lasts ([\\d.+\\-%]+) Seconds
-每次使用會從 ([\\d.+\\-%]+) 充能次數中消耗 ([\\d.+\\-%]+) 次<<---->>Consumes ([\\d.+\\-%]+) of ([\\d.+\\-%]+) Charges on use
-目前有 ([\\d.+\\-%]+) 充能次數<<---->>Currently has ([\\d.+\\-%]+) Charges
+施放時間: ([-\\d.+%]+) 秒<<---->>Cast Time: ([-\\d.+%]+) sec
+持續 ([-\\d.+%]+) \\(augmented\\) 秒<<---->>Lasts ([-\\d.+%]+) \\(augmented\\) Seconds            
+持續 ([-\\d.+%]+) 秒<<---->>Lasts ([-\\d.+%]+) Seconds
+每次使用會從 ([-\\d.+%]+) 充能次數中消耗 ([-\\d.+%]+) 次<<---->>Consumes ([-\\d.+%]+) of ([-\\d.+%]+) Charges on use
+目前有 ([-\\d.+%]+) 充能次數<<---->>Currently has ([-\\d.+%]+) Charges

@@ -177,7 +177,7 @@ namespace PathOfExile_Multi_Language_HUD
 
                         List<int> MatchedIndex = new List<int>();
                         {
-                            string temp = Regex.Replace(x, "([\\d\\s.+\\-%]+)", "");
+                            string temp = Regex.Replace(x, "([-\\d\\s.+%]+)", "");
                             for (int k = 0; k < Descriptions_Chinese.Map.Length; k++)
                                 if (temp.Length > k)
                                     if (Descriptions_Chinese.Map[k].ContainsKey(temp[k]))
@@ -227,7 +227,7 @@ namespace PathOfExile_Multi_Language_HUD
             });
             return sb.ToString();
         }
-        string ConvertToReplacement(string str, string replace = "([\\d.+\\-%]+)")
+        string ConvertToReplacement(string str, string replace = "([-\\d.+%]+)")
         {
             int index = 1;
             StringBuilder sb = new StringBuilder();

@@ -90,18 +90,18 @@ namespace Analyzer
                                             {
                                                 var split = x.Split('，');
                                                 if(split.Length==1)
-                                                _temp += " ([\\d.+\\-%]+)";
+                                                _temp += " ([-\\d.+%]+)";
                                                 else
                                                     for(int j=0;j<split.Length;j++)
                                                     {
                                                         if (j == 0)
                                                             _temp += split[j].Replace("(", "\\(").Replace(")", "\\)").Replace(".", "\\.").Replace("*", "\\*");
                                                         else
-                                                            _temp += "，" + "([\\d.+\\-%]+)";
+                                                            _temp += "，" + "([-\\d.+%]+)";
                                                     }
                                             }
                                                 else
-                                            _temp += " ([\\d.+\\-%]+)";                                            
+                                            _temp += " ([-\\d.+%]+)";                                            
                                         }
                                         else
                                             _temp += " " + x.Replace("(","\\(").Replace(")", "\\)").Replace(".", "\\.").Replace("*", "\\*");
@@ -124,7 +124,7 @@ namespace Analyzer
                     Map[i] = new Dictionary<char, List<int>>();
             texts.ForEach(x => x.Line.ForEach(y =>
             {
-                string temp=Regex.Replace(y.Content.Replace("([\\d.+\\-%]+)",""), "([\\d\\s.+\\-%]+)", "");                
+                string temp=Regex.Replace(y.Content.Replace("([-\\d.+%]+)",""), "([-\\d\\s.+%]+)", "");                
                 for (int k = 0; k < 20; k++)
                     if (temp.Length > k)
                         if (Map[k].ContainsKey(temp[k]))

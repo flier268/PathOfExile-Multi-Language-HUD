@@ -79,11 +79,11 @@ namespace PathOfExile_Multi_Language_HUD
             { "魔力消耗:" , "Mana Reserved:" },
             { "附加傷害效用:" , "Effectiveness of Added Damage:" },
             { "經驗值:" , "Experience:" },
-            { "施放時間: ([\\d.+\\-%]+) 秒" , "Cast Time: ([\\d.+\\-%]+) sec" },
-            { "持續 ([\\d.+\\-%]+) \\(augmented\\) 秒" , "Lasts ([\\d.+\\-%]+) \\(augmented\\) Seconds" },
-            { "持續 ([\\d.+\\-%]+) 秒" , "Lasts ([\\d.+\\-%]+) Seconds" },
-            { "每次使用會從 ([\\d.+\\-%]+) 充能次數中消耗 ([\\d.+\\-%]+) 次" , "Consumes ([\\d.+\\-%]+) of ([\\d.+\\-%]+) Charges on use" },
-            { "目前有 ([\\d.+\\-%]+) 充能次數" , "Currently has ([\\d.+\\-%]+) Charges" },
+            { "施放時間: ([-\\d.+%]+) 秒" , "Cast Time: ([-\\d.+%]+) sec" },
+            { "持續 ([-\\d.+%]+) \\(augmented\\) 秒" , "Lasts ([-\\d.+%]+) \\(augmented\\) Seconds" },
+            { "持續 ([-\\d.+%]+) 秒" , "Lasts ([-\\d.+%]+) Seconds" },
+            { "每次使用會從 ([-\\d.+%]+) 充能次數中消耗 ([-\\d.+%]+) 次" , "Consumes ([-\\d.+%]+) of ([-\\d.+%]+) Charges on use" },
+            { "目前有 ([-\\d.+%]+) 充能次數" , "Currently has ([-\\d.+%]+) Charges" },
         };
         public static Dictionary<string, string> B_To_A { get; set; } = new Dictionary<string, string>()
         {
@@ -121,11 +121,11 @@ namespace PathOfExile_Multi_Language_HUD
             { "Mana Reserved:" , "魔力消耗:"},
             { "Effectiveness of Added Damage:" , "附加傷害效用:"},
             { "Experience:" , "經驗值:"},
-            { "Cast Time: ([\\d.+\\-%]+) sec" , "施放時間: ([\\d.+\\-%]+) 秒"},
-            { "Lasts ([\\d.+\\-%]+) \\(augmented\\) Seconds" , "持續 ([\\d.+\\-%]+) \\(augmented\\) 秒"},
-            { "Lasts ([\\d.+\\-%]+) Seconds" , "持續 ([\\d.+\\-%]+) 秒"},
-            { "Consumes ([\\d.+\\-%]+) of ([\\d.+\\-%]+) Charges on use" , "每次使用會從 ([\\d.+\\-%]+) 充能次數中消耗 ([\\d.+\\-%]+) 次"},
-            { "Currently has ([\\d.+\\-%]+) Charges" , "目前有 ([\\d.+\\-%]+) 充能次數"}
+            { "Cast Time: ([-\\d.+%]+) sec" , "施放時間: ([-\\d.+%]+) 秒"},
+            { "Lasts ([-\\d.+%]+) \\(augmented\\) Seconds" , "持續 ([-\\d.+%]+) \\(augmented\\) 秒"},
+            { "Lasts ([-\\d.+%]+) Seconds" , "持續 ([-\\d.+%]+) 秒"},
+            { "Consumes ([-\\d.+%]+) of ([-\\d.+%]+) Charges on use" , "每次使用會從 ([-\\d.+%]+) 充能次數中消耗 ([-\\d.+%]+) 次"},
+            { "Currently has ([-\\d.+%]+) Charges" , "目前有 ([-\\d.+%]+) 充能次數"}
         };
     }
 }
