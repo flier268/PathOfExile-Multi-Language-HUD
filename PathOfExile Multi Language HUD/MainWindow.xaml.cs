@@ -298,6 +298,7 @@ namespace PathOfExile_Multi_Language_HUD
                                             tooltip_Visibility = Visibility.Collapsed;
                                             break;
                                         }
+                                        System.Threading.SpinWait.SpinUntil(() => false, 100);
                                     }
                                 });
                             }
