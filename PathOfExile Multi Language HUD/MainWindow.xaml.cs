@@ -208,9 +208,13 @@ namespace PathOfExile_Multi_Language_HUD
                                         var temp2 = temp_origin[0].Text.Where(y => y.Language == Settings.Language).Where(y => y.Line.Where(z => z.Head == temp[0].Line[0].Head).Count() > 0).ToList();
                                         if (temp2.Count > 0)
                                         {
-                                            sb.AppendLine(Regex.Replace(x, temp[0].Line[0].Content, ConvertToReplacement(temp2[0].Line[0].Content)).Trim());
-                                            Converted = true;
-                                            break;
+                                            try
+                                            {
+                                                sb.AppendLine(Regex.Replace(x, temp[0].Line[0].Content, ConvertToReplacement(temp2[0].Line[0].Content)).Trim());
+                                                Converted = true;
+                                                break;
+                                            }
+                                            catch { }
                                         }
                                     }
                                 }
