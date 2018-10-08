@@ -10,6 +10,7 @@
         <Menu VerticalAlignment="Top" HorizontalAlignment="Left">
             <MenuItem Header="≡">
                 <MenuItem Header="設定(Setting)" Click="MenuItem_Setting_Click"/>
+                <MenuItem Header="關於(About)" Click="MenuItem_About_Click"/>
                 <MenuItem Header="結束(Exit)" Click="MenuItem_Close_Click"/>
             </MenuItem>
         </Menu>

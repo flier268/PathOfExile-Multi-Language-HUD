@@ -360,5 +360,10 @@ namespace PathOfExile_Multi_Language_HUD
             TextSize = Settings.FontSize;
             Dictionary_Addons.Reload(Settings.AddonFile);
         }
+
+        private void MenuItem_About_Click(object sender, RoutedEventArgs e)
+        {
+            new Window_About().ShowDialog();
+        }
     }
 }

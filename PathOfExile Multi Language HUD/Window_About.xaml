@@ -1,0 +1,28 @@
+﻿<Window x:Class="PathOfExile_Multi_Language_HUD.Window_About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="關於" MinHeight="200" MinWidth="350" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Width="150" Height="150">
+            <Grid.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="icon.png"/>
+            </Grid.Background>
+        </Grid>
+        <TextBlock Text="PathOfExile Multi Language HUD" Grid.Column="1" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        <TextBlock Text="科技始終源自於惰性" Grid.Column="1" FontSize="16" VerticalAlignment="Bottom" Margin="10,0,0,0" HorizontalAlignment="Right"/>
+        <Label Content="Make by flier268" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <Label Content="GPL-3.0 Licence" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Bottom"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="-31,131,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>
