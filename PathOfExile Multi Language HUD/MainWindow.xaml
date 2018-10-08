@@ -10,10 +10,10 @@
     <Grid>
         <Menu VerticalAlignment="Top" HorizontalAlignment="Left">
             <MenuItem Header="≡" >
-                <MenuItem Header="設定(Setting)"/>
+                <MenuItem Header="設定(Setting)" Click="MenuItem_Setting_Click"/>
                 <MenuItem Header="結束(Exit)" Click="MenuItem_Close_Click"/>
             </MenuItem>
         </Menu>
-        <TextBlock Name="tooltip" Visibility="{Binding tooltip_Visibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#E5DADADA"/>
+        <TextBlock Name="tooltip" FontSize="{Binding TextSize}" Foreground="{Binding TextColor}" Visibility="{Binding tooltip_Visibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#E5DADADA"/>
     </Grid>
 </Window>

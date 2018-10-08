@@ -4,6 +4,7 @@ using Newtonsoft.Json.Converters;
 using System;
 using System.Globalization;
 using System.IO;
+using System.Windows.Media;
 
 namespace PathOfExile_Multi_Language_HUD
 {
@@ -13,9 +14,9 @@ namespace PathOfExile_Multi_Language_HUD
         {
             UiLanguage = "zh_TW";
             Language = AnalyzeTxt.Language.English;
-            AddonFile = "Default";
+            AddonFile = "Addon.zh_TW.en_US.txt";
             FontSize = 12;
-            FontColor = "#000000";
+            FontColor = Brushes.Black;
             AutoCopyToClipboard = false;
         }
         public static Settings Reload()
@@ -39,19 +40,17 @@ namespace PathOfExile_Multi_Language_HUD
         [JsonProperty("UILanguage")]
         public string UiLanguage { get; set; }
 
-        [JsonProperty("Language")]
-        private string _Language { get; set; }
-
         [JsonProperty("AddonFile")]
         public string AddonFile { get; set; }
 
-        public AnalyzeTxt.Language Language { get => (AnalyzeTxt.Language)Enum.Parse(typeof(AnalyzeTxt.Language), _Language); set { _Language = value.ToString(); } }
+        [JsonProperty("Language")]
+        public AnalyzeTxt.Language Language { get; set; }
 
         [JsonProperty("FontSize")]
-        public long FontSize { get; set; }
+        public double FontSize { get; set; }
 
         [JsonProperty("FontColor")]
-        public string FontColor { get; set; }
+        public Brush FontColor { get; set; }
 
         [JsonProperty("AutoCopyToClipboard")]
         public bool AutoCopyToClipboard { get; set; }

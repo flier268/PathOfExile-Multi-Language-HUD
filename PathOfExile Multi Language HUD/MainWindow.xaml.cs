@@ -1,19 +1,18 @@
 ﻿using Analyzer;
+using Poe整理倉庫v2;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
-using Poe整理倉庫v2;
-using System.Windows.Controls;
-using System.Threading;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System.Windows.Media;
 
 namespace PathOfExile_Multi_Language_HUD
 {
@@ -23,7 +22,7 @@ namespace PathOfExile_Multi_Language_HUD
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         AnalyzeTxt.AnalyzePack Descriptions_Origin { get; set; }
-        AnalyzeTxt.AnalyzePack Descriptions_Chinese { get; set; }
+        public static AnalyzeTxt.AnalyzePack Descriptions_Chinese { get; set; }
         Dictionary<string, string>[] Dictionary_ItemName { get; set; } = new Dictionary<string, string>[2];
         Dictionary<string, string>[] Dictionary_BaseType { get; set; } = new Dictionary<string, string>[2];
         Settings Settings = new Settings();
@@ -35,6 +34,9 @@ namespace PathOfExile_Multi_Language_HUD
             InitializeComponent();
             DataContext = this;
             Settings.Reload();
+            TextSize = Settings.FontSize;
+            TextColor = Settings.FontColor;
+
             Descriptions_Origin = AnalyzeTxt.AnalyzeTextFile(App.Filename_Origin);
             Descriptions_Chinese = AnalyzeTxt.AnalyzeTextFile(App.Filename_Translate);
             Dictionary_ItemName = AnalyzeDatcs.GetDictionary(AnalyzeDatcs.ConvertDatToCSV(App.Filename_Words));
@@ -46,7 +48,7 @@ namespace PathOfExile_Multi_Language_HUD
             foreach(var x in jsonList)            
                 Dictionary_BaseType = BaseType.AnalyzeJsonFile(x, Dictionary_BaseType);
 
-            if (Settings.AddonFile != "Default" && !string.IsNullOrWhiteSpace(Settings.AddonFile))
+            if (!string.IsNullOrWhiteSpace(Settings.AddonFile))
                 Dictionary_Addons.Reload(Settings.AddonFile);
             ApplicationHelper applicationHelper = new ApplicationHelper();
             applicationHelper.ForegroundWindowChanged += () =>
@@ -329,6 +331,11 @@ namespace PathOfExile_Multi_Language_HUD
 
         private Visibility _tooltip_Visibility;
         public Visibility tooltip_Visibility { get => _tooltip_Visibility; set { _tooltip_Visibility = value; OnPropertyChanged(); } }
+        private Brush _TextColor;
+        public Brush TextColor { get => _TextColor; set { _TextColor = value;OnPropertyChanged(); } }
+        private double _TextSize;
+        public double TextSize { get => _TextSize; set { _TextSize = value; OnPropertyChanged(); } }
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -338,6 +345,15 @@ namespace PathOfExile_Multi_Language_HUD
         private void MenuItem_Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void MenuItem_Setting_Click(object sender, RoutedEventArgs e)
+        {
+            new Window_Setting().ShowDialog();
+            Settings=Settings.Reload();
+            TextColor = Settings.FontColor;
+            TextSize = Settings.FontSize;
+            Dictionary_Addons.Reload(Settings.AddonFile);
         }
     }
 }

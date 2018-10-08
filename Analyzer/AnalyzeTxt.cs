@@ -12,6 +12,7 @@ namespace Analyzer
     {
         public struct AnalyzePack
         {
+            public HashSet<Language> LanguageList;
             public List<Description> Descriptions;
             public Dictionary<char, List<int>>[] Map;
         }
@@ -19,6 +20,7 @@ namespace Analyzer
         {
             int Index = 0;
             List<Description> temp = new List<Description>();
+            HashSet<Language> languagelist = new HashSet<Language>() { Language.English };
             Dictionary<char, List<int>>[] Map = new Dictionary<char, List<int>>[20];
             var lines = str.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
             Description text = null;
@@ -34,7 +36,7 @@ namespace Analyzer
                 {
                     if (text != null)
                     {
-                        temp.Add(text);
+                        temp.Add(text);                        
                         Map = MakeMap(text.Text, Map,Index++);
                     }
                     text = new Description();
@@ -76,6 +78,7 @@ namespace Analyzer
                                             text.Text.Add(_text);
                                         }
                                         catch { }
+                                        languagelist.Add(_text.Language);
                                         Dic_Language.Add(lang, _text.Language);
                                     }
                                     string _temp = "";
@@ -112,7 +115,7 @@ namespace Analyzer
             }
             temp.Add(text);
             Map = MakeMap(text.Text, Map, Index++);
-            return new AnalyzePack() { Descriptions = temp, Map = Map };
+            return new AnalyzePack() { Descriptions = temp, Map = Map, LanguageList = languagelist };
         }
         private static Dictionary<char, List<int>>[] MakeMap(List<Text> texts, Dictionary<char, List<int>>[] Map,int Index)
         {

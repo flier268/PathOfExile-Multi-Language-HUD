@@ -5,26 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PathOfExile_Multi_Language_HUD"
         mc:Ignorable="d"
-        Title="設定" Height="332" Width="452" ResizeMode="NoResize" WindowStyle="ToolWindow">
+        Title="設定" Height="332" ResizeMode="NoResize" WindowStyle="ToolWindow" SizeToContent="WidthAndHeight">
     <Grid>
-        <Label Content="字體大小" HorizontalAlignment="Left" Margin="22,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="字體顏色" HorizontalAlignment="Left" Margin="22,65,0,0" VerticalAlignment="Top"/>
-        <Label Content="顯示語言" HorizontalAlignment="Left" Margin="22,94,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="85,98,0,0"/>
-        <ComboBox HorizontalAlignment="Left" Margin="85,36,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="85,65,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" Width="70" MaxLength="7"/>
-        <Button Content="重新讀取" HorizontalAlignment="Left" Margin="224,98,0,0" VerticalAlignment="Top" Width="75"/>
-        <Menu VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+        <Menu VerticalAlignment="Top" Margin="10 0" HorizontalAlignment="Right">
             <MenuItem Header="語言(Language)" >
                 <MenuItem Header="中文"/>
                 <MenuItem Header="English"/>
             </MenuItem>
         </Menu>
-        <Label Content="注：Origin資料夾放的是官方的語言文件" HorizontalAlignment="Left" Margin="22,187,0,0" VerticalAlignment="Top"/>
-        <Label Content="注：Translate資料夾放的是自訂的語言文件" HorizontalAlignment="Left" Margin="22,207,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="85,135,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="增譯文件" HorizontalAlignment="Left" Margin="22,135,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="轉換後複製到剪貼簿" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,167,0,0"/>
+        <Grid Grid.Row="1" Margin="10 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
+            <Label Content="字體大小" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox Name="Combobox_FontSize" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"/>
+            <Label Content="字體顏色" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Name="TextBox_FontColor" Grid.Row="1" Grid.Column="1" Padding="5 0" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#FF000000" VerticalAlignment="Top" MaxLength="9" VerticalContentAlignment="Center"/>
+            <Label Content="顯示語言" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox Name="Combobox_Language" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" />
+            <Label Content="增譯文件" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Content="重新讀取" Grid.Row="3" Grid.Column="2" Margin="10 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_ReloadList_Click"/>
+            <ComboBox Name="Combobox_AddonFile" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" />
+            <CheckBox Content="轉換後複製到剪貼簿" Name="Checkbox_AutoCopyToClipboard" Grid.Row="4" Margin="0 0 10 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="注：Origin資料夾放的是官方的語言文件" Grid.Row="5" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="注：Translate資料夾放的是自訂的語言文件" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Content="儲存" Grid.Row="7" Grid.ColumnSpan="3" Click="Button_Save_Click"/>
+        </Grid>
     </Grid>
 </Window>
