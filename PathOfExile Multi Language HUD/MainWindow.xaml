@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Loaded="Window_Loaded" Unloaded="Window_Unloaded" ShowInTaskbar="False" Topmost="True"
+        Loaded="Window_Loaded" Unloaded="Window_Unloaded" Topmost="True"
         Title="MainWindow" Height="450" Width="800" WindowStyle="None" Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize">
     <Grid>
         <Menu VerticalAlignment="Top" HorizontalAlignment="Left">

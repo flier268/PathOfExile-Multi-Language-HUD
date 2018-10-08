@@ -54,7 +54,7 @@ namespace PathOfExile_Multi_Language_HUD
             applicationHelper.ForegroundWindowChanged += () =>
             {
                 POE_Foreground = ApplicationHelper.IsPathOfExileTop(Handle);
-                Visibility = POE_Foreground ? Visibility.Visible : Visibility.Hidden;
+                Opacity = POE_Foreground ? 1 : 0;
                 if (POE_Foreground)
                 {
                     POE_Rect = ApplicationHelper.PathOfExileDimentions;
