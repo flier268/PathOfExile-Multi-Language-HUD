@@ -144,6 +144,8 @@ namespace PathOfExile_Multi_Language_HUD
                     sb.AppendLine(Dictionary_BaseType[0][m.Groups[3].ToString()]);
                 else if (Dictionary_BaseType[1].ContainsKey(m.Groups[3].ToString()))
                     sb.AppendLine(Dictionary_BaseType[1][m.Groups[3].ToString()]);
+                else if (m.Groups[3].ToString().StartsWith("--------"))
+                    sb.AppendLine(dic.Aggregate(m.Groups[3].ToString(), (resoult, s) => Regex.Replace(resoult, s.Key, ConvertToReplacement(s.Value))));
                 else
                     sb.AppendLine(m.Groups[3].ToString());
             }
