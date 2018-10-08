@@ -13,5 +13,12 @@ namespace PathOfExile_Multi_Language_HUD
     /// </summary>
     public partial class App : Application
     {
+        public static string Directory_Addon { get => "Addon"; }
+        public static string Filename_Setting { get => "Settings.json"; }
+
+        public static string Filename_Origin { get => "origin/stat_descriptions.txt"; }
+        public static string Filename_Translate { get => "Translate/stat_descriptions.txt"; }
+        public static string Filename_Words { get => "Words.dat"; }
+        public static string Directory_BaseType { get => "BaseType"; }
     }
 }

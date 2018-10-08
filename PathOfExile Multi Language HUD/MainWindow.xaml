@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PathOfExile_Multi_Language_HUD"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Loaded="Window_Loaded" Unloaded="Window_Unloaded" ShowInTaskbar="False" Topmost="True"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize">
     <Grid>
-        
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Left">
+            <MenuItem Header="≡" >
+                <MenuItem Header="設定(Setting)"/>
+                <MenuItem Header="結束(Exit)" Click="MenuItem_Close_Click"/>
+            </MenuItem>
+        </Menu>
+        <TextBlock Name="tooltip" Visibility="{Binding tooltip_Visibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#E5DADADA"/>
     </Grid>
 </Window>

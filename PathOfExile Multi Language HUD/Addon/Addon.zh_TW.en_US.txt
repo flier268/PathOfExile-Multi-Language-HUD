@@ -1,0 +1,40 @@
+﻿稀有度: 通貨不足<<---->>Rarity: Currency
+稀有度: 通貨<<---->>Rarity: Currency
+稀有度: 寶石<<---->>Rarity: Gem
+稀有度:<<---->>Rarity:
+ 傳奇<<---->> Unique
+ 稀有<<---->> Rare
+ 魔法<<---->> Magic
+ 普通<<---->> Normal
+需求:<<---->>Requirements:
+物品等級:<<---->>Item Level:
+等級:<<---->>Level:
+力量:<<---->>Str:
+敏捷:<<---->>Dex:
+智慧:<<---->>Int:
+插槽:<<---->>Sockets:
+護甲:<<---->>Armour:
+閃避值:<<---->>Evasion Rating:
+能量護盾:<<---->>Energy Shield:
+元素傷害:<<---->>Elemental Damage:
+物理傷害:<<---->>Physical Damage:
+混沌傷害:<<---->>Chaos Damage:
+暴擊率:<<---->>Critical Strike Chance:
+每秒攻擊次數:<<---->>Attacks per Second:
+武器範圍:<<---->>Weapon Range:
+格擋率:<<---->>Chance to Block:
+塑者之物<<---->>Shaper Item
+尊師之物<<---->>Elder Item
+品質:<<---->>Quality:
+未鑑定<<---->>Unidentified
+堆疊數量:<<---->>Stack Size:
+地圖階級:<<---->>Map Tier:
+已汙染的<<---->>Corrupted
+魔力消耗:<<---->>Mana Reserved:
+附加傷害效用:<<---->>Effectiveness of Added Damage:
+經驗值:<<---->>Experience:
+施放時間: ([\\d.+\\-%]+) 秒<<---->>Cast Time: ([\\d.+\\-%]+) sec
+持續 ([\\d.+\\-%]+) \\(augmented\\) 秒<<---->>Lasts ([\\d.+\\-%]+) \\(augmented\\) Seconds            
+持續 ([\\d.+\\-%]+) 秒<<---->>Lasts ([\\d.+\\-%]+) Seconds
+每次使用會從 ([\\d.+\\-%]+) 充能次數中消耗 ([\\d.+\\-%]+) 次<<---->>Consumes ([\\d.+\\-%]+) of ([\\d.+\\-%]+) Charges on use
+目前有 ([\\d.+\\-%]+) 充能次數<<---->>Currently has ([\\d.+\\-%]+) Charges

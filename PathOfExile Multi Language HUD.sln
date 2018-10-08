@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathOfExile Multi Language HUD", "PathOfExile Multi Language HUD\PathOfExile Multi Language HUD.csproj", "{4DAA1923-9435-4486-A126-BE7F99F8D7C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer", "Analyzer\Analyzer.csproj", "{2165BF32-ED6A-429C-ADEB-82D4EC497E1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4DAA1923-9435-4486-A126-BE7F99F8D7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DAA1923-9435-4486-A126-BE7F99F8D7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DAA1923-9435-4486-A126-BE7F99F8D7C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2165BF32-ED6A-429C-ADEB-82D4EC497E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2165BF32-ED6A-429C-ADEB-82D4EC497E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2165BF32-ED6A-429C-ADEB-82D4EC497E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2165BF32-ED6A-429C-ADEB-82D4EC497E1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
