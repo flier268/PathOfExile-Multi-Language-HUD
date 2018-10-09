@@ -3,6 +3,7 @@ using Poe整理倉庫v2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -31,6 +32,7 @@ namespace PathOfExile_Multi_Language_HUD
         bool POE_Foreground = false;
         public MainWindow()
         {
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
             InitializeComponent();
             DataContext = this;
             Settings.Reload();
@@ -66,7 +68,14 @@ namespace PathOfExile_Multi_Language_HUD
                 }
             };
         }
-
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter(Path.Combine(App.BasePath, "Exception.txt"), true, System.Text.Encoding.UTF8))
+            {
+                sw.WriteLine(e.ExceptionObject.ToString());
+            }
+            MessageBox.Show(e.ExceptionObject.ToString());
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             #region 註冊Hook並監聽剪貼簿        
