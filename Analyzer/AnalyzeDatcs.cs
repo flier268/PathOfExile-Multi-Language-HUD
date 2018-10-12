@@ -12,12 +12,13 @@ namespace Analyzer
             {
                 var dat = new DatContainer(file);
                 var csvData = dat.GetCsvFormat();
+                if(csvData==null)
+                    throw new Exception("ConvertDatToCSV Error,is DatDefinitions.xml exist?");
                 return csvData;                
             }
             catch (Exception e)
-            {
-                System.Diagnostics.Debug.Print(String.Format("Error: {0}\n\t{1}", file, e.Message));
-                return null;
+            {                
+                throw;
             }
         }
         /// <summary>
@@ -26,7 +27,7 @@ namespace Analyzer
         /// <param name="csv">[0]:Key,Value  [1]:Value,Key</param>
         /// <returns></returns>
         public static Dictionary<string,string>[] GetDictionary(string csv)
-        {            
+        {
             var lines = csv.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             if (lines.Length <= 0)
                 return null;
