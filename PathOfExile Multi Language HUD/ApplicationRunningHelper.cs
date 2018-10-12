@@ -212,17 +212,11 @@ namespace Poe整理倉庫v2
         }
         public static RECT PathOfExilePosition(POINT p)
         {
-            RECT clientRect = new RECT();
-            GetClientRect(currentProcess.MainWindowHandle, ref clientRect);
-
-            POINT point;
-            ScreenToClient(currentProcess.MainWindowHandle, out point);
-
-            RECT rect = new RECT();
-            rect.Left = point.X + p.X;
-            rect.Right =   clientRect.Right- point.X -p.X;
-            rect.Top = point.X + p.X;
-            rect.Bottom =  clientRect.Bottom- point.Y-p.Y;
+            RECT rect = PathOfExileDimentions;
+            rect.Left = p.X - rect.Left;
+            rect.Right = rect.Right- p.X;
+            rect.Top = p.Y - rect.Top;
+            rect.Bottom = rect.Bottom - p.Y;
 
             return rect;
 

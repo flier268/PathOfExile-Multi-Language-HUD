@@ -3,7 +3,6 @@ using Poe整理倉庫v2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -32,7 +31,7 @@ namespace PathOfExile_Multi_Language_HUD
         bool POE_Foreground = false;
         public MainWindow()
         {
-            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);            
             InitializeComponent();
             DataContext = this;
             Settings.Reload();
@@ -294,15 +293,19 @@ namespace PathOfExile_Multi_Language_HUD
                                 clip += "\r\n--------\r\nNote: Convert by PathOfExile Multi Language HUD.";
                                 if (Settings.AutoCopyToClipboard)
                                     Clipboard.SetDataObject(clip);
-
-
                                 tooltip.Text = clip;
-                                var mousePos = Win32.GetMousePosition();
+                                var mousePos = Win32.GetMousePosition();                            
                                 var p = ApplicationHelper.PathOfExilePosition(new POINT((int)mousePos.X, (int)mousePos.Y));
-                                if (p.Left > p.Right)
-                                    tooltip.Margin = new Thickness(10, 20, 0, 0);
-                                else
-                                    tooltip.Margin = new Thickness((p.Left + p.Right) / 2, 20, 0, 0);
+                                tooltip.Dispatcher.BeginInvoke((Action)(() =>
+                                {
+                                    tooltip.Margin = new Thickness()
+                                    {
+                                        Top = Math.Max(p.Top - tooltip.ActualHeight, 0),
+                                        Left = Math.Max(p.Left - tooltip.ActualWidth / 2, 0),
+                                        Bottom = 0,
+                                        Right = 0
+                                    };
+                                }));
                                 tooltip_Visibility = Visibility.Visible;
                                 Task.Run(() =>
                                 {
