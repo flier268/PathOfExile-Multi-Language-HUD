@@ -135,6 +135,10 @@ namespace PathOfExile_Multi_Language_HUD
                     sb.AppendLine(Dictionary_ItemName[0][m.Groups[2].ToString()]);
                 else if (Dictionary_ItemName[1].ContainsKey(m.Groups[2].ToString()))
                     sb.AppendLine(Dictionary_ItemName[1][m.Groups[2].ToString()]);
+                else if (Dictionary_BaseType[0].ContainsKey(m.Groups[2].ToString()))
+                    sb.AppendLine(Dictionary_BaseType[0][m.Groups[2].ToString()]);
+                else if (Dictionary_BaseType[1].ContainsKey(m.Groups[2].ToString()))
+                    sb.AppendLine(Dictionary_BaseType[1][m.Groups[2].ToString()]);
                 else
                     sb.AppendLine(m.Groups[2].ToString());
             }
