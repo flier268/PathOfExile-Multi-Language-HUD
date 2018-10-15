@@ -320,9 +320,11 @@ namespace PathOfExile_Multi_Language_HUD
                                 tooltip_Visibility = Visibility.Visible;
                                 Task.Run(() =>
                                 {
+                                    Point pos = new Point();
                                     while (true)
                                     {
-                                        if (!Win32.GetMousePosition().Equals(mousePos))
+                                        pos = Win32.GetMousePosition();
+                                        if (Math.Abs(pos.X - mousePos.X) > 10 || Math.Abs(pos.Y - mousePos.Y) > 10)
                                         {
                                             tooltip_Visibility = Visibility.Collapsed;
                                             break;
