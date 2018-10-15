@@ -288,7 +288,14 @@ namespace PathOfExile_Multi_Language_HUD
                     // clipboard content changed 
                     if (Clipboard.ContainsText())
                     {
-                        string clip = Clipboard.GetText(TextDataFormat.UnicodeText);
+                        string clip = "";
+                        for (int i = 0; i < 3; i++)
+                            try
+                            {
+                                clip = Clipboard.GetText();
+                                break;
+                            }
+                            catch { }
                         if (clip.Contains("--------"))
                         {
                             if (!clip.Contains("Convert by PathOfExile Multi Language HUD."))
